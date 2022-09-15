@@ -1,0 +1,145 @@
+body{
+    background-color: #EEF1FF;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+width: 40%;
+}
+.brand{
+    font-size: 20px;
+}
+.home{
+    padding-left: 900px;
+}
+nav{
+    font-family:'Roboto', sans-serif; 
+    background-color: black;
+    width:100%;
+    height: auto;
+}
+h1{
+    font-family:'Roboto', sans-serif; 
+    padding: 10px;
+    margin-left: 10px;
+}
+ul{
+    
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    color: aliceblue;
+}
+li{
+    padding: 1%;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    min-height: 70vh;
+    display: flex;
+    margin: 30px auto;
+    width: 60%;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.bottom{
+    position: sticky;
+    bottom: 0;
+    background-color:black ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    padding: 10px;
+    color: aliceblue;
+}
+
+.range{
+    min-width: 80vw;
+    cursor: pointer;
+}
+
+.icons{
+    margin: 20px;
+}
+.icons i{
+    cursor: pointer;
+    margin: 2px;
+}
+
+.songitem{
+    height: 10vh;
+    background-color: white;
+    color: black;
+    display: flex;
+    width:200%;
+    align-items: center;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    background-color: #EEF1FF;
+}
+.songitem img{
+    padding: 10px;
+    height: 8vh;
+    width: 10vh;
+    border-radius: 30px;
+}
+
+.songduration{
+    padding: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.songinfo{
+    position: absolute;
+    left: 10vw;
+    width: 26%;
+    align-content: center;
+    font-size: 17px;
+    font-family:'Roboto', sans-serif;
+}
+.songinfo1{
+    height: 5vh;
+    opacity: 0;
+    transition: 1s ease-in;
+}
+
+
+@media only screen and (max-width:700px){
+    .songitem{
+        width :100%;
+    }
+    .nav{
+        width: 100%;
+    }
+    .home{
+        padding: 0;
+    }
+   
+    .songinfo{
+        position: sticky;
+        bottom: 0;
+        font-size: 15px;
+        width: 330px;
+    }
+    .bottom{
+       height: 175px; 
+    }
+}
