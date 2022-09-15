@@ -17,7 +17,6 @@ width: 40%;
 nav{
     font-family:'Roboto', sans-serif; 
     background-color: black;
-    width:100%;
     height: auto;
 }
 h1{
@@ -64,7 +63,7 @@ li{
     flex-direction: column;
     width: 100%;
     height: 30%;
-    padding: 10px;
+    padding-top: 5px;
     color: aliceblue;
     background-image: linear-gradient(black,#203239);
 }
@@ -126,9 +125,9 @@ li{
 
 @media only screen and (max-width:700px){
     .songitem{
-        width :100%;
+        width :90%;
     }
-    .nav{
+    nav{
         width: 100%;
     }
     .home{
@@ -139,9 +138,9 @@ li{
         position: sticky;
         bottom: 0;
         font-size: 15px;
-        width: 330px;
+        width: 100%;
     }
     .bottom{
-       height: 175px; 
+       height: 170px; 
     }
 }
