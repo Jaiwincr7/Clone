@@ -99,6 +99,7 @@ document.getElementById("previous").addEventListener('click',(e)=>{
     buttonname.innerHTML=song[index-1].songname;
     gifdisplay.style.opacity=1; 
 })
+
 document.getElementById("next").addEventListener('click',(e)=>{
     index=parseInt(e.target.id);
     if(index>5){
@@ -113,3 +114,18 @@ document.getElementById("next").addEventListener('click',(e)=>{
     buttonname.innerHTML=song[index-1].songname;
     gifdisplay.style.opacity=1; 
 })
+
+
+function keyboard(event){
+    if (event.keyCode === 32) { 
+        event.preventDefault();
+        if(audioplayer.paused) { 
+            audioplayer.play() 
+            gifdisplay.style.opacity=1;
+        }
+        else
+        {audioplayer.pause()
+            gifdisplay.style.opacity=0;
+        }
+      }
+}

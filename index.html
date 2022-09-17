@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5c071ef73d.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onkeypress="keyboard(event)">
 
     <nav>
         <ul>
@@ -65,13 +65,13 @@
         <div class="banner"></div>
     </div>
 
-    <div class="bottom">
+    <div class="bottom" >
         <input type="range" class="range" value="0">
         <div class="icons">
         <i class="fa-sharp fa-2x fa-solid fa-backward" id="previous"></i>
         <i class="fa-2x fa-regular fa-circle-pause" id="hello"></i>
-        <i class="fa-regular fa-2x fa-circle-play" id="playbutton" id="next"></i>
-        <i class="fa-solid fa-2x fa-forward"></i>
+        <i class="fa-regular fa-2x fa-circle-play" id="playbutton"></i>
+        <i class="fa-solid fa-2x fa-forward" id="next"></i>
         </div>
         <div class="songinfo">
             <img src="songinfo.gif" alt="" srcset="" class="songinfo1" id="gif"><span class="buttonname">Someone Else - Rezz,Grabbtiz</span>
