@@ -77,7 +77,7 @@ let ii,j;
 songitem.forEach((element,i)=>{
     element.addEventListener('click',(e)=>{
         index=parseInt(e.target.id);
-        audioplayer.src=index+'.mp3';
+        audioplayer.src='/'+index+'.mp3';
         audioplayer.currentTime=0;
         audioplayer.play();
         buttonname.innerHTML=song[index-1].songname;
@@ -93,7 +93,7 @@ document.getElementById("previous").addEventListener('click',(e)=>{
     else{
         index-=1;
     }
-    audioplayer.src=index+'.mp3';
+    audioplayer.src='/'+index+'.mp3';
     audioplayer.currentTime=0;
     audioplayer.play();
     buttonname.innerHTML=song[index-1].songname;
@@ -108,7 +108,7 @@ document.getElementById("next").addEventListener('click',(e)=>{
     else{
         index+=1;
     }
-    audioplayer.src=index+'.mp3';
+    audioplayer.src='/'+index+'.mp3';
     audioplayer.currentTime=0;
     audioplayer.play();
     buttonname.innerHTML=song[index-1].songname;
