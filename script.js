@@ -1,5 +1,5 @@
-let index=0;
-let audioplayer= new Audio('1.mp3');
+let index={};
+let audioplayer= new Audio('song1.mp3');
 let play=document.getElementById("playbutton");
 let progressbar=document.querySelector(".range");
 let pause=document.getElementById("hello");
@@ -10,33 +10,33 @@ let buttonname=document.querySelector(".buttonname");
 //song list
 let song=[
     {
-        songname:"Someone Else",
-        filepath:"1.mp3",
+        songnames:"Someone Else",
+        filepath:"song1.mp3",
         coverpath:"img1.jpg",
     },
     {
-        songname:"Shooting Stars",
-        filepath:"2.mp3",
+        songnames:"Shooting Stars",
+        filepath:"song2.mp3",
         coverpath:"img2.jpg",
     },
     {
-        songname:"Pillow Talk",
-        filepath:"3.mp3",
+        songnames:"Pillow Talk",
+        filepath:"song3.mp3",
         coverpath:"img3.jpg",
     },
     {
-        songname:"Paro",
-        filepath:"4.mp3",
+        songnames:"Paro",
+        filepath:"song4.mp3",
         coverpath:"img4.jpg",
     },
     {
-        songname:"Dead to me",
-        filepath:"5.mp3",
+        songnames:"Dead to me",
+        filepath:"song5.mp3",
         coverpath:"img5.jpg",
     },
     {
-        songname:"My Ordinary Life",
-        filepath:"6.mp3",
+        songnames:"My Ordinary Life",
+        filepath:"song6.mp3",
         coverpath:"img1.jpg",
     }
 ]
@@ -71,47 +71,52 @@ function change(){
 
 songitem.forEach((element,i)=>{
     element.getElementsByTagName("img")[0].src=song[i].coverpath;
-    element.getElementsByClassName("songname")[0].innerText=song[i].songname;
+    element.getElementsByClassName("songname")[0].innerText=song[i].songnames;
 })
 let ii,j;
 songitem.forEach((element,i)=>{
     element.addEventListener('click',(e)=>{
-        index=parseInt(e.target.id);
+        index=e.currentTarget.id;
+        let index1=index.toString().split('');
         audioplayer.src='/'+index+'.mp3';
         audioplayer.currentTime=0;
         audioplayer.play();
-        buttonname.innerHTML=song[index-1].songname;
+        buttonname.innerHTML=song[index1[4]-1].songnames;
         gifdisplay.style.opacity=1; 
     })
 })
 
 document.getElementById("previous").addEventListener('click',(e)=>{
-    index=parseInt(e.target.id);
-    if(index<=0){
-        index=0;
+    let index1=index.toString().split('');
+    let index2=parseInt(index1[4]);
+    if(index2<0){
+        index2=5;
     }
     else{
-        index-=1;
+        index2=index2-1;
     }
-    audioplayer.src='/'+index+'.mp3';
+    audioplayer.src='/song'+index2+'.mp3';
     audioplayer.currentTime=0;
     audioplayer.play();
-    buttonname.innerHTML=song[index-1].songname;
+    buttonname.innerHTML=song[index2-1].songnames;
     gifdisplay.style.opacity=1; 
 })
 
 document.getElementById("next").addEventListener('click',(e)=>{
-    index=parseInt(e.target.id);
-    if(index>5){
-        index=0;
+    let index1=index.toString().split('');
+    let index2=parseInt(index1[4]);
+    if(index2>=5){
+        index2=1;
     }
     else{
-        index+=1;
+        index2=index2+1;
     }
-    audioplayer.src='/'+index+'.mp3';
+    console.log(index2)
+    audioplayer.src='/song'+index2+'.mp3';
     audioplayer.currentTime=0;
     audioplayer.play();
-    buttonname.innerHTML=song[index-1].songname;
+    
+    buttonname.innerHTML=song[index2-1].songnames;
     gifdisplay.style.opacity=1; 
 })
 
